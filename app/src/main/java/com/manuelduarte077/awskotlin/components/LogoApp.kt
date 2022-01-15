@@ -3,6 +3,7 @@ package com.manuelduarte077.awskotlin.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -25,9 +26,10 @@ fun LogoApp() {
       .fillMaxWidth()
   ) {
     Image(
+
       painter = painterResource(id = R.drawable.app_logo),
       contentDescription = "",
-      modifier = Modifier.size(100.dp)
+      modifier = Modifier.size(150.dp).padding(10.dp),
     )
     Text(
       text = "Android ATC", fontSize = 30.sp,

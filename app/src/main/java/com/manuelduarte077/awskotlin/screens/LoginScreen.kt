@@ -14,11 +14,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.manuelduarte077.awskotlin.components.ButtonBase
+import com.manuelduarte077.awskotlin.components.buttons.ButtonBase
+import com.manuelduarte077.awskotlin.components.LogoApp
 import com.manuelduarte077.awskotlin.components.TextClick
 import com.manuelduarte077.awskotlin.components.text.TextFieldBase
 import com.manuelduarte077.awskotlin.components.text.TextFieldPassBase
 import com.manuelduarte077.awskotlin.navigation.Screen
+
 
 @Composable
 fun LoginScreen(naveController: NavController) {
@@ -34,11 +36,13 @@ fun LoginScreen(naveController: NavController) {
     ) {
       item {
         Spacer(modifier = Modifier.padding(20.dp))
+        LogoApp()
+        Spacer(modifier = Modifier.padding(20.dp))
         TextFieldBase("Correo", emailValue)
         Spacer(modifier = Modifier.padding(5.dp))
         TextFieldPassBase("Password", passwordValue, passwordVisible)
         Spacer(modifier = Modifier.padding(20.dp))
-        ButtonBase("Iniciar Sesión", onClick = {
+        ButtonBase("Login", onClick = {
           naveController.navigate(Screen.HomeScreen.route) {
             popUpTo(Screen.LoginScreen.route) {
               inclusive = true

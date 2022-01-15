@@ -1,4 +1,4 @@
-package com.manuelduarte077.awskotlin.components
+package com.manuelduarte077.awskotlin.components.buttons
 
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -7,7 +7,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun ButtonBase(text: String, onClick: () -> Unit) {
-  Button(onClick = { onClick }) {
+  Button(onClick = { onClick() }) {
     Text(
       text = text,
       fontSize = 20.sp

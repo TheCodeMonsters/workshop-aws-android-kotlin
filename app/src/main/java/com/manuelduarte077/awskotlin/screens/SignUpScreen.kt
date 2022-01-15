@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.manuelduarte077.awskotlin.components.ButtonBase
+import com.manuelduarte077.awskotlin.components.buttons.ButtonBase
 import com.manuelduarte077.awskotlin.components.LogoApp
 import com.manuelduarte077.awskotlin.components.TextClick
 import com.manuelduarte077.awskotlin.components.text.TextFieldBase
@@ -26,7 +26,6 @@ fun SignUpScreen(naveController: NavController) {
   val emailValue = remember { mutableStateOf("") }
   val nameValue = remember { mutableStateOf("") }
   val phoneValue = remember { mutableStateOf("") }
-
 
   val passwordValue = remember { mutableStateOf("") }
   val passwordVisible = remember { mutableStateOf(false) }
@@ -42,6 +41,7 @@ fun SignUpScreen(naveController: NavController) {
         .fillMaxHeight()
     ) {
       item {
+        Spacer(modifier = Modifier.padding(5.dp))
         LogoApp()
 
         Spacer(modifier = Modifier.padding(5.dp))
