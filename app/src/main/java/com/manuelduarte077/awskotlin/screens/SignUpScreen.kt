@@ -51,9 +51,6 @@ fun SignUpScreen(naveController: NavController) {
         TextFieldBase("Correo", emailValue)
 
         Spacer(modifier = Modifier.padding(5.dp))
-        TextFieldBase("Telefono", phoneValue)
-
-        Spacer(modifier = Modifier.padding(5.dp))
         TextFieldPassBase("Contraseña", passwordValue, passwordVisible)
 
         Spacer(modifier = Modifier.padding(5.dp))

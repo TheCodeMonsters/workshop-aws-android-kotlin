@@ -14,9 +14,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.manuelduarte077.awskotlin.R
 import com.manuelduarte077.awskotlin.components.buttons.BottomBarApp
+import com.manuelduarte077.awskotlin.components.buttons.ButtonBase
 import com.manuelduarte077.awskotlin.components.buttons.TopBarApp
 import com.manuelduarte077.awskotlin.fragment.ProfileFragment
 import com.manuelduarte077.awskotlin.fragment.UserFragment
+import com.manuelduarte077.awskotlin.navigation.Screen
 
 @Composable
 fun HomeScreen(naveController: NavController) {
@@ -27,6 +29,7 @@ fun HomeScreen(naveController: NavController) {
   val toggleTheme: () -> Unit = {
     if (currentTheme) setDayTheme() else setDarkTheme()
   }
+
   Scaffold(
     backgroundColor = MaterialTheme.colors.background,
     modifier = Modifier.padding(15.dp),
@@ -44,7 +47,16 @@ fun HomeScreen(naveController: NavController) {
               "Perfil",
               "Datos personales",
               R.drawable.ic_baseline_logout_24,
-              onIconClick = {})
+
+              onIconClick = {
+
+                naveController.navigate(Screen.LoginScreen.route) {
+                  popUpTo(Screen.HomeScreen.route) {
+                    inclusive = true
+                  }
+                }
+
+              })
         }
       }
     },

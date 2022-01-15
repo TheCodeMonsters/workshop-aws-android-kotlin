@@ -30,7 +30,7 @@ fun TextFieldPassBase(
     label = {
       Text(
         text = text,
-        color = MaterialTheme.colors.background
+        color = MaterialTheme.colors.onBackground
       )
     },
     singleLine = true,

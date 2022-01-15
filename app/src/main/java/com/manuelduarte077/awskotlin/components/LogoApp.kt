@@ -29,7 +29,7 @@ fun LogoApp() {
 
       painter = painterResource(id = R.drawable.app_logo),
       contentDescription = "",
-      modifier = Modifier.size(150.dp).padding(10.dp),
+      modifier = Modifier.size(150.dp).padding(5.dp),
     )
     Text(
       text = "Android ATC", fontSize = 30.sp,
