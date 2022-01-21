@@ -14,35 +14,35 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun TopBarApp(
-  title: String,
-  description: String,
-  idIcon: Int, onIconClick: () -> Unit
+    title: String,
+    description: String,
+    idIcon: Int, onIconClick: () -> Unit
 ) {
-  Row(
-    horizontalArrangement = Arrangement.SpaceBetween,
-    verticalAlignment = Alignment.CenterVertically,
-    modifier = Modifier
-      .fillMaxWidth()
-      .padding(bottom = 20.dp)
-  ) {
-    Column {
-      Text(
-        text = title, style =
-        MaterialTheme.typography.h5.copy(fontWeight = FontWeight.Bold)
-      )
-      Spacer(modifier = Modifier.padding(8.dp))
-      Text(
-        text = description, style =
-        MaterialTheme.typography.subtitle1
-      )
+    Row(
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 20.dp)
+    ) {
+        Column {
+            Text(
+                text = title, style =
+                MaterialTheme.typography.h5.copy(fontWeight = FontWeight.Bold)
+            )
+            Spacer(modifier = Modifier.padding(8.dp))
+            Text(
+                text = description, style =
+                MaterialTheme.typography.subtitle1
+            )
+        }
+        IconButton(onClick = { onIconClick() }) {
+            Icon(
+                painter = painterResource(id = idIcon), contentDescription = "",
+                modifier = Modifier.size(24.dp),
+                tint = MaterialTheme.colors.primary
+            )
+        }
     }
-    IconButton(onClick = { onIconClick() }) {
-      Icon(
-        painter = painterResource(id = idIcon), contentDescription = "",
-        modifier = Modifier.size(24.dp),
-        tint = MaterialTheme.colors.primary
-      )
-    }
-  }
 
 }

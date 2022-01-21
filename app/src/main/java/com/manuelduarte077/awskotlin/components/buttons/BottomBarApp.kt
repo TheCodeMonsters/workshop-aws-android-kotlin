@@ -10,31 +10,31 @@ import com.manuelduarte077.awskotlin.screens.Section
 
 @Composable
 fun BottomBarApp(
-  items: List<Section>,
-  currentSection: Section,
-  onSectionSelected: (Section) -> Unit,
+    items: List<Section>,
+    currentSection: Section,
+    onSectionSelected: (Section) -> Unit,
 ) {
-  BottomNavigation(
-    modifier = Modifier.height(50.dp),
-    backgroundColor = MaterialTheme.colors.background,
-    contentColor = MaterialTheme.colors.surface
-  ) {
-    items.forEach { section ->
-      val selected = section == currentSection
-      BottomNavigationItem(
-        selected = selected,
-        onClick = { onSectionSelected(section) },
-        icon = {
-          Icon(
-            painter = painterResource(id = section.icon),
-            contentDescription = "",
-            modifier = Modifier.size(24.dp)
-          )
-        },
-        selectedContentColor = MaterialTheme.colors.primary,
-        unselectedContentColor = MaterialTheme.colors.onBackground,
-      )
+    BottomNavigation(
+        modifier = Modifier.height(50.dp),
+        backgroundColor = MaterialTheme.colors.background,
+        contentColor = MaterialTheme.colors.surface
+    ) {
+        items.forEach { section ->
+            val selected = section == currentSection
+            BottomNavigationItem(
+                selected = selected,
+                onClick = { onSectionSelected(section) },
+                icon = {
+                    Icon(
+                        painter = painterResource(id = section.icon),
+                        contentDescription = "",
+                        modifier = Modifier.size(24.dp)
+                    )
+                },
+                selectedContentColor = MaterialTheme.colors.primary,
+                unselectedContentColor = MaterialTheme.colors.onBackground,
+            )
+        }
     }
-  }
 
 }

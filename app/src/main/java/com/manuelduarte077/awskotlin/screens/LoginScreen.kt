@@ -14,9 +14,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.manuelduarte077.awskotlin.components.buttons.ButtonBase
 import com.manuelduarte077.awskotlin.components.LogoApp
 import com.manuelduarte077.awskotlin.components.TextClick
+import com.manuelduarte077.awskotlin.components.buttons.ButtonBase
 import com.manuelduarte077.awskotlin.components.text.TextFieldBase
 import com.manuelduarte077.awskotlin.components.text.TextFieldPassBase
 import com.manuelduarte077.awskotlin.navigation.Screen

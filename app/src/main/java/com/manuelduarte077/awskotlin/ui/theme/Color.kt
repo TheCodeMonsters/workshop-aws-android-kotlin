@@ -14,7 +14,7 @@ val black = HexToColor.getColor("#222a32")
 val surfaceDark = HexToColor.getColor("#1c2639")
 
 object HexToColor{
-  fun getColor(color: String):Color{
-    return Color(android.graphics.Color.parseColor(color))
-  }
+    fun getColor(color: String):Color{
+        return Color(android.graphics.Color.parseColor(color))
+    }
 }

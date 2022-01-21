@@ -22,77 +22,77 @@ import com.manuelduarte077.awskotlin.navigation.Screen
 
 @Composable
 fun HomeScreen(naveController: NavController) {
-  val navItems = Section.values().toList()
-  val section = remember { mutableStateOf(Section.Users) }
-  val currentTheme = isSystemInDarkTheme()
+    val navItems = Section.values().toList()
+    val section = remember { mutableStateOf(Section.Users) }
+    val currentTheme = isSystemInDarkTheme()
 
-  val toggleTheme: () -> Unit = {
-    if (currentTheme) setDayTheme() else setDarkTheme()
-  }
-
-  Scaffold(
-    backgroundColor = MaterialTheme.colors.background,
-    modifier = Modifier.padding(15.dp),
-    topBar = {
-      Crossfade(targetState = section.value) { section ->
-        when (section) {
-          Section.Users ->
-            TopBarApp(
-              "Usuarios",
-              "Listado de Usuarios",
-              R.drawable.ic_baseline_highlight_24,
-              onIconClick = { toggleTheme() })
-          Section.Profile ->
-            TopBarApp(
-              "Perfil",
-              "Datos personales",
-              R.drawable.ic_baseline_logout_24,
-
-              onIconClick = {
-
-                naveController.navigate(Screen.LoginScreen.route) {
-                  popUpTo(Screen.HomeScreen.route) {
-                    inclusive = true
-                  }
-                }
-
-              })
-        }
-      }
-    },
-
-    bottomBar = {
-      BottomBarApp(
-        items = navItems,
-        currentSection = section.value,
-        onSectionSelected = { section.value = it }
-      )
-
-    }) { innerPadding ->
-    Crossfade(
-      modifier = Modifier.padding(innerPadding),
-      targetState = section.value
-    ) { section ->
-      when (section) {
-        Section.Users -> UserFragment(naveController)
-        Section.Profile -> ProfileFragment(naveController)
-      }
+    val toggleTheme: () -> Unit = {
+        if (currentTheme) setDayTheme() else setDarkTheme()
     }
 
-  }
+    Scaffold(
+        backgroundColor = MaterialTheme.colors.background,
+        modifier = Modifier.padding(15.dp),
+        topBar = {
+            Crossfade(targetState = section.value) { section ->
+                when (section) {
+                    Section.Users ->
+                        TopBarApp(
+                            "Usuarios",
+                            "Listado de Usuarios",
+                            R.drawable.ic_baseline_highlight_24,
+                            onIconClick = { toggleTheme() })
+                    Section.Profile ->
+                        TopBarApp(
+                            "Perfil",
+                            "Datos personales",
+                            R.drawable.ic_baseline_logout_24,
+
+                            onIconClick = {
+
+                                naveController.navigate(Screen.LoginScreen.route) {
+                                    popUpTo(Screen.HomeScreen.route) {
+                                        inclusive = true
+                                    }
+                                }
+
+                            })
+                }
+            }
+        },
+
+        bottomBar = {
+            BottomBarApp(
+                items = navItems,
+                currentSection = section.value,
+                onSectionSelected = { section.value = it }
+            )
+
+        }) { innerPadding ->
+        Crossfade(
+            modifier = Modifier.padding(innerPadding),
+            targetState = section.value
+        ) { section ->
+            when (section) {
+                Section.Users -> UserFragment(naveController)
+                Section.Profile -> ProfileFragment(naveController)
+            }
+        }
+
+    }
 
 }
 
 private fun setDayTheme() {
-  AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 }
 
 private fun setDarkTheme() {
-  AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
 }
 
 enum class Section(val icon: Int) {
-  Users(R.drawable.ic_baseline_home_24),
-  Profile(R.drawable.ic_baseline_person_24)
+    Users(R.drawable.ic_baseline_home_24),
+    Profile(R.drawable.ic_baseline_person_24)
 }

@@ -8,14 +8,14 @@ import androidx.compose.runtime.MutableState
 
 @Composable
 fun TextFieldBase(text: String, textValue: MutableState<String>) {
-  OutlinedTextField(
-    value = textValue.value,
-    onValueChange = { textValue.value = it },
-    label = {
-      Text(
-        text = text,
-        color = MaterialTheme.colors.onBackground
-      )
-    }
-  )
+    OutlinedTextField(
+        value = textValue.value,
+        onValueChange = { textValue.value = it },
+        label = {
+            Text(
+                text = text,
+                color = MaterialTheme.colors.onBackground
+            )
+        }
+    )
 }

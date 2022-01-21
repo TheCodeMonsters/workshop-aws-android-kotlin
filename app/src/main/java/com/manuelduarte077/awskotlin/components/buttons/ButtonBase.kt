@@ -7,10 +7,10 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun ButtonBase(text: String, onClick: () -> Unit) {
-  Button(onClick = { onClick() }) {
-    Text(
-      text = text,
-      fontSize = 20.sp
-    )
-  }
+    Button(onClick = { onClick() }) {
+        Text(
+            text = text,
+            fontSize = 20.sp
+        )
+    }
 }

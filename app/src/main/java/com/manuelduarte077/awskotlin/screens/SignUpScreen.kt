@@ -25,7 +25,6 @@ import com.manuelduarte077.awskotlin.navigation.Screen
 fun SignUpScreen(naveController: NavController) {
   val emailValue = remember { mutableStateOf("") }
   val nameValue = remember { mutableStateOf("") }
-  val phoneValue = remember { mutableStateOf("") }
 
   val passwordValue = remember { mutableStateOf("") }
   val passwordVisible = remember { mutableStateOf(false) }

@@ -7,12 +7,12 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun TextClick(text: String, onClick: () -> Unit) {
-  Text(
-    text = text,
-    modifier = Modifier.clickable(
-      onClick = {
-        onClick()
-      }
+    Text(
+        text = text,
+        modifier = Modifier.clickable(
+            onClick = {
+                onClick()
+            }
+        )
     )
-  )
 }

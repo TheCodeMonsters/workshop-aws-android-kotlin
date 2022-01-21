@@ -23,30 +23,30 @@ import com.manuelduarte077.awskotlin.R
 
 @Composable
 fun ProfileFragment(navController: NavController) {
-  LazyColumn(
-    horizontalAlignment = Alignment.CenterHorizontally,
-    modifier = Modifier.fillMaxWidth()
-  ) {
-    item {
-      Image(
-        painter = painterResource(R.drawable.app_logo),
-        contentDescription = "avatar",
-        contentScale = ContentScale.Crop,            // crop the image if it's not a square
-        modifier = Modifier
-          .size(150.dp)
-          .clip(CircleShape)                       // clip to the circle shape
-          .border(3.dp, MaterialTheme.colors.primary, CircleShape)   // add a border (optional)
-      )
-      Column(
+    LazyColumn(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-          .padding(40.dp)
-      ) {
-        Text(
-          text = "Manuel",
-          textAlign = TextAlign.Start,
-          style = MaterialTheme.typography.h5,
-        )
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        item {
+            Image(
+                painter = painterResource(R.drawable.app_logo),
+                contentDescription = "avatar",
+                contentScale = ContentScale.Crop,            // crop the image if it's not a square
+                modifier = Modifier
+                    .size(150.dp)
+                    .clip(CircleShape)                       // clip to the circle shape
+                    .border(3.dp, MaterialTheme.colors.primary, CircleShape)   // add a border (optional)
+            )
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .padding(40.dp)
+            ) {
+                Text(
+                    text = "Manuel",
+                    textAlign = TextAlign.Start,
+                    style = MaterialTheme.typography.h5,
+                )
 
 //        Text(
 //          text = "3000 puntos",
@@ -55,10 +55,10 @@ fun ProfileFragment(navController: NavController) {
 //          modifier = Modifier
 //            .padding(bottom = 15.dp)
 //        )
-      }
+            }
+
+        }
 
     }
-
-  }
 
 }

@@ -10,22 +10,22 @@ import com.manuelduarte077.awskotlin.screens.SignUpScreen
 
 @Composable
 fun Navigation() {
-  val navController = rememberNavController()
-  NavHost(
-    navController = navController,
-    startDestination = Screen.LoginScreen.route,
-  ) {
-    composable(Screen.LoginScreen.route) {
-      LoginScreen(navController)
-    }
-    composable(Screen.SignUpScreen.route) {
-      SignUpScreen(navController)
-    }
+    val navController = rememberNavController()
+    NavHost(
+        navController = navController,
+        startDestination = Screen.LoginScreen.route,
+    ) {
+        composable(Screen.LoginScreen.route) {
+            LoginScreen(navController)
+        }
+        composable(Screen.SignUpScreen.route) {
+            SignUpScreen(navController)
+        }
 
-    composable(Screen.HomeScreen.route) {
-      HomeScreen(navController)
+        composable(Screen.HomeScreen.route) {
+            HomeScreen(navController)
+        }
     }
-  }
 
 }
 
